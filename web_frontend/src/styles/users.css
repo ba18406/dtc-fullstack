@@ -1,0 +1,252 @@
+.users-toolbar {
+  margin: 24px 0;
+  background: white;
+  padding: 18px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.users-toolbar input {
+  width: 320px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 15px;
+}
+
+.users-toolbar input:focus {
+  outline: none;
+  border-color: #1e3a8a;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.primary-btn {
+  background: #1e3a8a;
+  color: white;
+}
+
+.secondary-btn {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.role-badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.role-badge.admin {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.role-badge.supervisor {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.role-badge.user {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.table-btn {
+  padding: 7px 10px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 8px;
+  background: #e2e8f0;
+  color: #0f172a;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.table-btn.danger {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+@media (max-width: 800px) {
+  .users-toolbar {
+    flex-direction: column;
+  }
+
+  .users-toolbar input {
+    width: 100%;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.user-modal {
+  width: 430px;
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+}
+
+.user-modal h2 {
+  margin-bottom: 18px;
+}
+
+.user-modal label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.user-modal input,
+.user-modal select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.files-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.files-actions input[type="file"] {
+  max-width: 230px;
+}
+
+.file-preview-modal {
+  width: 80%;
+  height: 85%;
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.preview-body {
+  height: calc(100% - 70px);
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.preview-message {
+  text-align: center;
+  max-width: 500px;
+}
+
+.action-badge {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.action-badge.login {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.action-badge.upload {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.action-badge.download {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.action-badge.delete {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.action-badge.open {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+.settings-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.settings-row span {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.settings-row strong {
+  color: #0f172a;
+  text-align: right;
+}

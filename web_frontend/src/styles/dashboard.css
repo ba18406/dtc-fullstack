@@ -1,0 +1,150 @@
+.dashboard-page {
+  padding: 28px;
+}
+
+.page-title h1 {
+  margin: 0;
+  font-size: 34px;
+  color: #0f172a;
+}
+
+.page-title p {
+  margin-top: 6px;
+  color: #64748b;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.stat-card span {
+  color: #64748b;
+  font-weight: 700;
+}
+
+.stat-card h2 {
+  margin: 12px 0;
+  font-size: 32px;
+  color: #1e3a8a;
+}
+
+.stat-card p {
+  margin: 0;
+  color: #94a3b8;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.panel {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  min-height: 220px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.panel h3 {
+  margin-top: 0;
+  color: #0f172a;
+}
+
+.panel p {
+  color: #64748b;
+}
+
+@media (max-width: 1000px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.upload-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.upload-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.upload-list strong {
+  color: #0f172a;
+}
+
+.upload-list span {
+  color: #64748b;
+}
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activity-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.activity-list strong {
+  display: block;
+  color: #0f172a;
+}
+
+.activity-list span,
+.activity-list small {
+  color: #64748b;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.data-table th {
+  background: #f8fafc;
+  color: #334155;
+}
+
+.data-table td {
+  color: #475569;
+}
