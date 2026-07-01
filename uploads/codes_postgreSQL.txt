@@ -1,0 +1,77 @@
+To create a new countainer In Bash (cmd):
+docker run --name dtc-postgres ^
+  -e POSTGRES_USER=dtc_user ^
+  -e POSTGRES_PASSWORD=dtc_pass ^
+  -e POSTGRES_DB=dtc ^
+  -p 5432:5432 ^
+  -d postgres:16
+
+To access the countainer:
+docker exec -it dtc-postgres psql -U dtc_user -d dtc
+
+To Import Data:
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS schools;
+
+To cleanup database:
+TRUNCATE TABLE employees, schools RESTART IDENTITY;
+
+To Create tables:
+CREATE TABLE schools (
+    school_id SERIAL PRIMARY KEY,
+    governorate TEXT,
+    wilaya TEXT,
+    school_code TEXT UNIQUE,
+    school_name TEXT
+);
+CREATE TABLE employees (
+    emp_id SERIAL PRIMARY KEY,
+    school_id INTEGER,
+    employee_name TEXT,
+    nationality TEXT,
+    contract_type TEXT,
+    job_title TEXT,
+    subject TEXT,
+    service_years INTEGER,
+    hire_date DATE,
+    FOREIGN KEY (school_id) REFERENCES schools(school_id)
+);
+FOREIGN KEY (school_id)
+
+To add users:
+INSERT INTO users (username, password, full_name, role, supervisor_id)
+VALUES
+('super1', '1234', 'Supervisor One', 'supervisor', 1),
+('user1', '1234', 'Normal User One', 'user', 2),
+('user2', '1234', 'Normal User Two', 'user', 2);
+
+To find all tables:
+\dt
+To find name of columns of a table(users for example):
+SELECT column_name
+FROM information_schema.columns
+WHERE table_name = 'users';
+To find all records of a table:
+SELECT * FROM users;
+To find details of columns of a table:
+\d users
+To know each user whom admin or supervisor:
+SELECT u.username, s.username AS supervisor
+FROM users u
+LEFT JOIN users s ON u.supervisor_id = s.id;
+
+To rename column name:
+ALTER TABLE files
+RENAME COLUMN uploaded_at TO uploaded_date;
+
+To check current users:
+SELECT id, username, full_name, role, supervisor_id
+FROM users
+ORDER BY id;
+
+##
+Insert the school only if it does not already exist:
+INSERT INTO schools (governorate, wilaya, school_code, school_name)
+VALUES (...)
+ON CONFLICT (school_code) DO NOTHING;
+##
